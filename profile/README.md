@@ -42,7 +42,7 @@ FireflyDevs 想和所有喜欢流萤、喜欢《崩坏：星穹铁道》的玩�
 3. 完成修改，运行 `node server.ts` 和 `pnpm typecheck`
 4. 提交 Pull Request，目标分支选择 **`dev`**
 
-PR 会自动运行 TypeScript 类型检查、首页与跳转检查。检查通过并完成维护者审批后，会自动合并到 `dev`，并更新到 [开发预览站](https://dev.xn--qzw410c.love)。
+PR 会自动运行 TypeScript 类型检查、首页与跳转检查。团队成员发起的 PR 在检查通过后会自动合并到 `dev`，并更新到 [开发预览站](https://dev.xn--qzw410c.love)；外部贡献者的 PR 由维护者审核后合并。
 
 ### 加入开发团队
 
