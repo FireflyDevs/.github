@@ -35,6 +35,15 @@ FireflyDevs 不限制开发方向和项目类型，但**所有项目必须与流
 
 > 项目需要合法、遵守 GitHub 平台规则、愿意友善协作，并且与流萤相关。
 
+## 项目链接
+
+| 项目 | 地址 |
+| --- | --- |
+| FireflyLoveSite | https://github.com/FireflyDevs/FireflyLoveSite |
+| 简介 | 一个尚在筹备中的非官方《崩坏：星穹铁道》流萤主题同好网站。 |
+| 正式站点 | https://流萤.love |
+| 开发预览 | https://dev.流萤.love |
+
 ### 发起新项目
 
 1. 在 [组织 Issues](https://github.com/FireflyDevs/.github/issues) 提交一个「新项目提案」
@@ -45,15 +54,15 @@ FireflyDevs 不限制开发方向和项目类型，但**所有项目必须与流
    - 计划使用的语言或技术
    - 你是否愿意作为项目维护者
    - 是否需要组织协助建仓或配置 CI
-3. 维护者会协助在 FireflyDevs 下创建仓库，并邀请你参与维护
+3. 维护者会邀请你加入[FireflyDevs组织](https://github.com/FireflyDevs)
 
-项目仓库、README、CI、分支规则都可以按项目自己的需要来定。
+项目仓库、README、CI、分支规则都可以按项目自己的需要来开发。
 
 如果项目同时包含流萤相关和无关内容，需要确保流萤相关部分是项目的核心主题，而不是只在介绍里提一句流萤。
 
 ## 当前项目：FireflyLoveSite
 
-FireflyDevs 目前正在开发 **FireflyLoveSite**，一个面向流萤和《崩坏：星穹铁道》玩家的非官方同好网站。
+FireflyDevs 目前正在开发 **[FireflyLoveSite](https://github.com/FireflyDevs/FireflyLoveSite)**，一个面向流萤和《崩坏：星穹铁道》玩家的非官方同好网站。
 
 - 页面：流萤主题首页、角色介绍、图集、视频、资料库
 - 内容：角色故事、官方资讯、活动资讯、壁纸与同人作品
@@ -95,29 +104,11 @@ FireflyLoveSite 的 PR 请提交到 `dev` 分支。PR 会自动运行 TypeScript
 2. 简单介绍你的 GitHub 用户名、擅长方向、可投入时间和想参与的项目
 3. 也可以加入 [QQ 群](https://qm.qq.com/q/guZg2hdNE4) 联系维护者
 
-加入团队后，你可以参与 FireflyLoveSite，也可以发起和维护自己的流萤相关项目。
-
-## 项目链接
-
-| 项目 | 地址 |
-| --- | --- |
-| FireflyLoveSite | https://github.com/FireflyDevs/FireflyLoveSite |
-| 正式站点 | https://流萤.love |
-| 开发预览 | https://dev.流萤.love |
-| 组织 Issue / 新项目申请 | https://github.com/FireflyDevs/.github/issues |
-
-## FireflyLoveSite 技术栈
-
-| 部分 | 技术 |
-| --- | --- |
-| 页面 | HTML5 + CSS3 + 原生 JavaScript |
-| 服务端 | TypeScript + Node.js |
-| 部署 | Nginx + systemd |
-| CI/CD | GitHub Actions + dev 分支自动部署 |
+加入团队后，你可以参与 [FireflyLoveSite](https://github.com/FireflyDevs/FireflyLoveSite)，也可以发起和维护自己的流萤相关项目。
 
 ## 说明
 
-- FireflyLoveSite 是非官方同人项目，与米哈游 / HoYoverse 及《崩坏：星穹铁道》官方无关。
+- [FireflyLoveSite](https://github.com/FireflyDevs/FireflyLoveSite) 是非官方同人项目，与米哈游 / HoYoverse 及《崩坏：星穹铁道》官方无关。
 - 游戏角色、官方图片、音乐、视频等素材版权归原权利人所有。
 - 贡献素材前请确认来源与使用授权。
 - 其他项目以自己的 README 和声明为准。
