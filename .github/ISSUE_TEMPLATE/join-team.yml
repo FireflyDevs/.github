@@ -1,92 +1,57 @@
-name: 加入开发团队
-description: 申请加入 FireflyDevs 开发团队
-title: "[加入开发团队] "
-labels: ["加入开发团队"]
+name: 加入流萤的秘密基地
+description: 想认识同好、一起聊天一起玩？不需要经验，欢迎加入
+title: "[加入流萤的秘密基地] "
+labels: ["加入流萤的秘密基地"]
 body:
   - type: markdown
     attributes:
       value: |
-        感谢你愿意加入 FireflyDevs。
+        这里是流萤的秘密基地，不是招聘，也没有能力门槛。
 
-        我们欢迎开发者、设计师、资料整理者、测试者和项目发起人。提交申请不代表立即通过，维护者会根据项目需要和你的意愿进行审核。
+        会不会写代码、会不会设计、有没有作品，都不重要。
+        只要你喜欢流萤、愿意友善相处，就可以来。
+        想聊天、看图、潜水、学习，或者暂时什么都不会，也欢迎。
 
-        - 项目仓库：https://github.com/FireflyDevs/FireflyLoveSite
-        - 组织主页：https://github.com/FireflyDevs
-        - 请不要在这里填写密码、身份证号、手机号等敏感信息
+        不用写计划，不用交作品，打个招呼就可以。
 
   - type: input
-    id: github
+    id: nickname
     attributes:
-      label: GitHub 用户名或主页
-      description: 用于确认你的 GitHub 身份
-      placeholder: 例如 https://github.com/your-name
+      label: 怎么称呼你？
+      description: GitHub 用户名、昵称、QQ 昵称都可以
+      placeholder: 随便写一个方便称呼你的名字
     validations:
-      required: true
-
-  - type: dropdown
-    id: project
-    attributes:
-      label: 想参与的项目
-      description: 可以之后调整
-      options:
-        - FireflyLoveSite
-        - 发起一个全新的流萤相关项目
-        - 都可以，服从项目安排
-    validations:
-      required: true
+      required: false
 
   - type: checkboxes
-    id: skills
+    id: mood
     attributes:
-      label: 你擅长或想参与的方向
-      description: 可多选；没有经验但愿意学习也欢迎
+      label: 你想怎么参与？
+      description: 随便选，选“还没想好”也完全没问题
       options:
-        - label: 前端与交互开发（Vue / TypeScript / CSS）
-        - label: 后端 / Node.js / 部署与运维
-        - label: UI / 视觉 / 动效设计
-        - label: 角色资料、活动资料、图集与视频整理
-        - label: 文案 / 翻译 / 文档
-        - label: 测试 / Issue 整理 / 社区答疑
-        - label: 项目发起与维护
-        - label: 暂时没有经验，但愿意学习
-    validations:
-      required: true
-
-  - type: dropdown
-    id: availability
-    attributes:
-      label: 每周大概能投入多少时间
-      options:
-        - 少于 2 小时
-        - 2–5 小时
-        - 5–10 小时
-        - 10 小时以上
-    validations:
-      required: true
-
-  - type: textarea
-    id: experience
-    attributes:
-      label: 作品、经历或相关链接
-      description: 可选。可以放 GitHub 项目、设计作品、写过的一篇文章等
-      placeholder: 没有也可以直接留空
+        - label: 先来聊天、潜水、看看大家
+        - label: 一起看图、收图、分享流萤相关内容
+        - label: 想学做网站 / 开发
+        - label: 想做设计、画画或做视频
+        - label: 想整理资料、写文案或做测试
+        - label: 还没想好，先加入再说
     validations:
       required: false
 
   - type: textarea
-    id: motivation
+    id: hello
     attributes:
-      label: 你为什么想加入
-      description: 简单说说你想做什么、希望参与哪部分，以及你希望团队提供什么帮助
-      placeholder: 我想参与……
+      label: 随便说点什么
+      description: 比如你最喜欢流萤的哪句台词、哪张图，或者只是来打个招呼
+      placeholder: 你好，我是……
     validations:
-      required: true
+      required: false
 
   - type: input
     id: contact
     attributes:
-      label: 其他联系方式
-      description: 可选。可以填写 QQ、邮箱或其他能找到你的方式
+      label: 怎么联系你？
+      description: 可选，可以填 QQ、邮箱或其他联系方式；如果只想通过 GitHub 联系，留空即可
       placeholder: 可选
     validations:
       required: false
@@ -94,9 +59,8 @@ body:
   - type: checkboxes
     id: agreement
     attributes:
-      label: 确认
+      label: 最后
       options:
-        - label: 我愿意友善协作、尊重其他贡献者和原作者
-        - label: 我理解 FireflyDevs 是非官方志愿项目，申请需要维护者审核
+        - label: 我会友善对待其他同好，尊重不同的喜好和作品
     validations:
-      required: true
+      required: false
