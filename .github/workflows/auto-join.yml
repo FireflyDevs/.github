@@ -1,0 +1,81 @@
+name: Auto join organization
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  invite:
+    if: >-
+      contains(github.event.issue.labels.*.name, '加入流萤的秘密基地') ||
+      contains(github.event.issue.labels.*.name, '加入开发团队')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.JOIN_BOT_APP_ID }}
+          private-key: ${{ secrets.JOIN_BOT_PRIVATE_KEY }}
+          owner: FireflyDevs
+
+      - name: Invite issue author
+        id: invite
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            const issue = context.payload.issue;
+            let invited = false;
+            let reason = '';
+
+            try {
+              await github.request('POST /orgs/{org}/invitations', {
+                org: 'FireflyDevs',
+                invitee_id: issue.user.id,
+                role: 'direct_member',
+                headers: {
+                  'X-GitHub-Api-Version': '2022-11-28'
+                }
+              });
+              invited = true;
+            } catch (error) {
+              reason = error.status === 422
+                ? '已有待处理邀请或已经是组织成员'
+                : error.message;
+            }
+
+            core.setOutput('invited', String(invited));
+            core.setOutput('reason', reason);
+
+      - name: Reply to issue
+        uses: actions/github-script@v7
+        env:
+          INVITED: ${{ steps.invite.outputs.invited }}
+          REASON: ${{ steps.invite.outputs.reason }}
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const labels = issue.labels.map((label) => label.name);
+            const isDeveloper = labels.includes('加入开发团队');
+            let body;
+
+            if (process.env.INVITED === 'true') {
+              body = isDeveloper
+                ? '已自动发送组织邀请。开发团队权限需要维护者审核后手动分配。'
+                : '已自动发送组织邀请，请在 GitHub 通知中接受邀请。';
+            } else {
+              body = `自动邀请未完成：${process.env.REASON || '未知原因'}。维护者可以手动处理。`;
+            }
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body
+            });
